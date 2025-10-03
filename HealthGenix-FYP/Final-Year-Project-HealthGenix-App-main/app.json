@@ -1,0 +1,25 @@
+{
+  "expo": {
+    "name": "GymCountApp",
+    "slug": "gym-count-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "backgroundColor": "#121212"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "android": {
+      "permissions": [
+        "INTERNET",
+        "VIBRATE",
+        "CAMERA",
+        "RECORD_AUDIO"
+      ],
+      "package": "com.yourcompany.gymcountapp"
+    }
+  }
+}

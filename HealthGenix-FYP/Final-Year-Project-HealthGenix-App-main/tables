@@ -1,0 +1,36 @@
+CREATE TABLE userinformation.gym_registrations (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  email VARCHAR(255),
+  game VARCHAR(50),
+  exercise VARCHAR(100),
+  sets INT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (email) REFERENCES users(email)
+);
+
+
+CREATE TABLE userinformation.task_registrations (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(100),
+    game VARCHAR(50),
+    task1 VARCHAR(100),
+    task2 VARCHAR(100),
+    task3 VARCHAR(100),
+    task4 VARCHAR(100),
+    task5 VARCHAR(100),
+    task6 VARCHAR(100),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (email) REFERENCES users(email)
+);
+
+
+CREATE TABLE userinformation.task_counts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(100),
+    game VARCHAR(50),
+    task_name VARCHAR(100),
+    count INT DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (email) REFERENCES users(email),
+    UNIQUE KEY unique_task (email, game, task_name)
+);
